@@ -25,7 +25,7 @@ Player.prototype.rollDice = function() {
         $("#player1").toggleClass("disablePlayer");
         $("#player2").toggleClass("disablePlayer");
       }
-    alert("You rolled a 1, your turn is over.");
+    alert("You rolled a 1, you lose your points and your turn is over.");
   } else {
       this.diceScore = diceRoll;
       this.turnScore += diceRoll;
@@ -48,7 +48,7 @@ Player.prototype.hold = function() {
     }
 
   if (this.totalScore >=100) {
-    alert("Game Over Yeeeeeaaaaaaaaah! You win!");
+    alert("You win! Click OK to start a new game.");
     newGame();
   }
 };
