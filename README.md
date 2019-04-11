@@ -33,7 +33,7 @@ _This program pits two players against one another. Each player rolls a dice and
 
 ## Known Bugs
 
-_The program does not declare a winner when a score of 100 is reached. Some addClass/removeClass effects are also not applying._
+_None as of last update._
 
 ## Support and contact details
 
