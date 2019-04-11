@@ -17,11 +17,13 @@ Player.prototype.rollDice = function() {
     if (this.playerActive === player1.playerActive) {
       player1.playerActive = false;
       player2.playerActive = true;
-      $("#player1").addClass(".disablePlayer");
+      $("#player1").toggleClass("disablePlayer");
+      $("#player2").toggleClass("disablePlayer");
     } else if (this.playerActive === player2.playerActive) {
         player1.playerActive = true;
         player2.playerActive = false;
-        $("#player2").addClass(".disablePlayer");
+        $("#player1").toggleClass("disablePlayer");
+        $("#player2").toggleClass("disablePlayer");
       }
     alert("You rolled a 1, your turn is over.");
   } else {
@@ -31,19 +33,29 @@ Player.prototype.rollDice = function() {
 };
 
 Player.prototype.hold = function() {
-  if (this.totalScore >= 100) {
+  this.totalScore += this.turnScore;
+  this.turnScore = 0;
+  if (this.playerActive === player1.playerActive) {
+    player1.playerActive = false;
+    player2.playerActive = true;
+    $("#player1").toggleClass("disablePlayer");
+    $("#player2").toggleClass("disablePlayer");
+  } else if (this.playerActive === player2.playerActive) {
+      player1.playerActive = true;
+      player2.playerActive = false;
+      $("#player1").toggleClass("disablePlayer");
+      $("#player2").toggleClass("disablePlayer");
+    }
+
+  if (this.totalScore >=100) {
     alert("Game Over Yeeeeeaaaaaaaaah! You win!");
     newGame();
-    alert("Click New Game to start a new game");
-  } else {
-    this.totalScore += this.turnScore;
-    this.turnScore = 0;
   }
 };
 
 function newGame () {
-  $('#player1').removeClass('disablePlayer');
-  $('#player2').removeClass('disablePlayer');
+  $('#player1').removeClass("disablePlayer");
+  $('#player2').addClass("disablePlayer");
   var players = [player1, player2];
   players.forEach(function (player) {
     player.diceScore = 0;
@@ -62,6 +74,7 @@ $(document).ready(function () {
   var gamer1, gamer2;
   player1 = new Player(gamer1);
   player2 = new Player(gamer2);
+  newGame();
   $("#rollDice1").click(function (event) {
     event.preventDefault();
     player1.playerActive = true;
