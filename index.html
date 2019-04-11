@@ -14,31 +14,61 @@
   <div class="container">
     <div class="jumbotron">
       <h1>Pig Dice Game</h1>
-      <p>A fun little dice rolling game. First player to reach 100 wins, careful not to roll a 1!</p>
+      <p>A fun little dice rolling game. First player to reach 100 wins, but careful not to roll a 1!</p>
     </div>
 <!-- This section is the area where the game is played -->
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div id="player1">
-          <h3>Player 1</h3>
+          <div class="card">
+            <img class="card-img-top" src="img/ryu.png" alt="ryu">
+            <br>
+            <div class="card-body">
+              <h4 class="card-title">Player 1</h4>
+              <h5>Dice Score: <span class ="diceScore1"></span></h5>
+              <h5>Turn Score: <span class ="turnScore1"></span></h5>
+              <h5>Total Score: <span class ="totalScore1"></span></h5>
+              <button type="button" id="rollDice1" class="btn btn-dark">Roll</button>
+              <button type="button" id="hold1" class="btn btn-dark">Hold</button>
+            </div>
+          </div>
+          <!-- <h3>Player 1</h3>
           <br>
           <h4>Dice Score: <span class ="diceScore1"></span></h4>
           <h4>Turn Score: <span class ="turnScore1"></span></h4>
           <h4>Total Score: <span class ="totalScore1"></span></h4>
           <br>
           <button type="button" id="rollDice1" class="btn btn-dark">Roll</button>
-          <button type="button" id="hold1" class="btn btn-dark">Hold</button>
+          <button type="button" id="hold1" class="btn btn-dark">Hold</button> -->
         </div>
       </div>
-      <div id="player2">
-        <h3>Player 2</h3>
-        <br>
-        <h4>Dice Score: <span class ="diceScore2"></span></h4>
-        <h4>Turn Score: <span class ="turnScore2"></span></h4>
-        <h4>Total Score: <span class ="totalScore2"></span></h4>
-        <br>
-        <button type="button" id="rollDice2" class="btn btn-dark">Roll</button>
-        <button type="button" id="hold2" class="btn btn-dark">Hold</button>
+      <div class="col-md-4">
+        <div id="vsimage">
+          <img src="img/vs.png" img alt="versus symbol" class="center">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div id="player2">
+          <div class="card">
+            <img class="card-img-top" src="img/ken.jpg" alt="ken">
+            <div class="card-body">
+              <h4 class="card-title">Player 2</h4>
+              <h5>Dice Score: <span class ="diceScore2"></span></h5>
+              <h5>Turn Score: <span class ="turnScore2"></span></h5>
+              <h5>Total Score: <span class ="totalScore2"></span></h5>
+              <button type="button" id="rollDice2" class="btn btn-dark">Roll</button>
+              <button type="button" id="hold2" class="btn btn-dark">Hold</button>
+            </div>
+          </div>
+          <!-- <h3>Player 2</h3>
+          <br>
+          <h4>Dice Score: <span class ="diceScore2"></span></h4>
+          <h4>Turn Score: <span class ="turnScore2"></span></h4>
+          <h4>Total Score: <span class ="totalScore2"></span></h4>
+          <br>
+          <button type="button" id="rollDice2" class="btn btn-dark">Roll</button>
+          <button type="button" id="hold2" class="btn btn-dark">Hold</button> -->
+        </div>
       </div>
     </div>
 <!-- As with the very first section, this section should generally not be edited. -->
